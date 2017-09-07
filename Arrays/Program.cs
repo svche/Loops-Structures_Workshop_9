@@ -30,7 +30,7 @@ namespace Arrays
             }
             Console.WriteLine();
 
-// sorting main diagonal
+// sorting main diagonal   
 
             int[] tempArray = new int[size];
 
