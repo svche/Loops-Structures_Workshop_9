@@ -11,9 +11,7 @@ namespace Arrays
         static void Main(string[] args)
         {
 
-// making a matrix from random
-
-            const int size = 5;
+            const int size = 5;                                     // making a matrix from random
             int[,] array = new int[size,size];
             int maxVal = 20;
 
@@ -30,42 +28,28 @@ namespace Arrays
             }
             Console.WriteLine();
 
-// sorting main diagonal   
-
-            int[] tempArray = new int[size];
-
-            for (int i = 0; i < size; i++)
-            {
-                for (int j = 0; j < size-1; j++)
-                {
-                   if (i == j)
-                    {
-                        tempArray[i] = array[i, j];
-                    }
-                }
-            }
-
-            for (int i = 0; i < tempArray.Length; i++)
-            {
-                for (int j = 0; j < tempArray.Length - 1; j++)
-                {
-                    if (tempArray[j] > tempArray[j+1])
-                    {
-                        int temp = tempArray[i];
-                        tempArray[i] = tempArray[j];
-                        tempArray[j] = temp;
-
-                    }
-                }
-            }
-
             for (int i = 0; i < size; i++)
             {
                 for (int j = 0; j < size; j++)
                 {
                     if (i == j)
                     {
-                         array[i, j] = tempArray[j] ;
+                        Console.Write(array[i, j] + "\t");
+                    }
+                }
+            }
+            Console.WriteLine();
+               
+
+            for (int i = 0; i < size; i++)                          // sorting by main diagonal   
+            {
+                for (int j = 0; j < size; j++)
+                {
+                    if (array[i,i] > array[j, j])
+                    {
+                        int temp = array[i,i];
+                        array[i,i] = array[j,j];
+                        array[j,j] = temp;
                     }
                 }
             }
